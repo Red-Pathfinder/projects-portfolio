@@ -1,0 +1,430 @@
+* {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  color: white;
+  overflow: hidden;
+}
+
+body {
+  background-color: #000000;
+}
+
+/* Update library section backgrounds */
+.lib-option {
+  background-color: #121212;
+}
+
+.lib-option img,
+.lib-option a {
+  background-color: transparent;
+}
+
+.icons {
+  font-size: 1.25rem;
+  display: flex;
+  background-color: #121212;
+}
+
+.icons i {
+  opacity: 0.7;
+  margin-right: 1rem;
+  background-color: transparent;
+}
+
+.main {
+  display: flex;
+  height: 100vh;
+  padding: 0.5rem;
+}
+.sidebar {
+  background-color: #000000;
+  width: 300px;
+  border-radius: 1rem; /* 16px */
+  margin-right: 0.5rem;
+}
+.main_content {
+  background-color: #121212;
+  flex: 1;
+  border-radius: 1rem; /* 16px */
+  overflow: auto;
+  padding: 0 2.5rem 0 2.5rem;
+}
+.music_player {
+  background-color: rgb(0, 0, 0);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 72px;
+}
+.nav {
+  background-color: #121212;
+  border-radius: 1rem; /* 16px */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100px;
+  padding: 0.5rem 0.75rem;
+}
+.nav-option {
+  background-color: #121212;
+  line-height: 2.5rem;
+  opacity: 0.7;
+  padding: 0.5rem 0.75rem;
+}
+.nav-option:hover {
+  opacity: 1;
+}
+.nav-option i {
+  font-size: 1.25rem;
+}
+.nav-option a {
+  font-size: 1rem;
+  margin-left: 1rem;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+.library {
+  background-color: #121212;
+  border-radius: 1rem;
+  height: 100%;
+  margin-top: 0.5rem;
+  padding: 0.5rem 0.75rem;
+}
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.lib-option img {
+  height: 1.25rem;
+  width: 1.25rem;
+}
+.icons {
+  font-size: 1.25rem;
+  display: flex;
+}
+.icons i {
+  opacity: 0.7;
+  margin-right: 1rem;
+}
+.icons i:hover {
+  opacity: 1;
+}
+.box {
+  background-color: #232323;
+  height: 120px;
+  border-radius: 0.75rem;
+  margin: 0.75rem 0 1rem 0;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.box-p1 {
+  background-color: transparent;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+.box-p2 {
+  background-color: transparent;
+  font-size: 0.85rem;
+  color: #a7a7a7;
+  margin-bottom: 0.5rem;
+}
+.badge {
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 100px;
+  padding: 0.5rem 1.25rem;
+  font-weight: 700;
+  width: fit-content;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+.dark-badge{
+  background-color: black;
+  color: white;
+}
+.lib-box {
+  background-color: #121212;
+}
+.sticky-nav {
+  position: sticky;
+  top: 0;
+  background-color: #121212;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0 1rem 0;
+  z-index: 9;
+}
+.sticky-nav-icons {
+  margin-left: 0.75rem;
+}
+.sticky-nav-options {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.75rem;
+}
+.sticky-nav-options button {
+  margin-right: 0.5rem;
+}
+.sticky-nav-options .fa-user {
+  font-size: 1.1rem;
+  margin: 0 0.5rem;
+  background-color: #121212;
+  padding: 0.25rem;
+  cursor: pointer;
+}
+.sticky-nav-options .fa-user:hover {
+  transform: scale(1.1);
+}
+.sticky-nav-options .dark-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.3rem 0.75rem;
+  gap: 0.2rem;
+}
+.sticky-nav-options .fa-circle-down {
+  font-size: 1.1rem;
+  margin: 0; 
+  display: flex;
+  align-items: center;
+  margin-top: 0.2rem;
+}
+@media (max-width: 1000px){
+  .hide, .hide-explore{
+    display: none;
+  }
+}
+.cards-container{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card{
+  background-color: #232323;
+  width: 150px;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-left: 1.5rem;
+  margin-top: 1rem;
+  position: relative;
+}
+
+.card .play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card:hover .play-icon {
+    opacity: 1;
+}
+
+.card:hover .play-icon i {
+    font-size: 3rem;
+    color: #1bd760;
+}
+.card-img{
+  width: 100%;
+  border-radius: 0.5rem;
+}
+.card-title{
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+.card-info{
+  font-size: 0.85rem;
+  opacity: 0.7;
+  margin-top: 0.5rem;
+}
+h2{
+  margin: 1rem 0;
+}
+.card-info .fa-circle{
+  font-size: 4px;
+  margin-bottom: 2px;
+  margin-left: 1px;
+  margin-right: 1px;
+}
+.footer{
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.line{
+  width: 90%;
+  height: 30%;
+  border-top: 1px solid white;
+  opacity: 0.4;
+}
+.music-player {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    background-color: #181818;
+    border-top: 1px solid #282828;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.song-bar {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.song-infos {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.image-container {
+    width: 60px;
+    height: 60px;
+}
+
+#song-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.song-description p {
+    margin: 0;
+}
+
+#title {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #fff;
+}
+
+#artist {
+    font-size: 0.7rem;
+    color: #b3b3b3;
+}
+
+.icons {
+    display: flex;
+    gap: 15px;
+}
+
+.icons i {
+    cursor: pointer;
+    color: #b3b3b3;
+}
+
+.icons i:hover {
+    color: #fff;
+}
+
+.progress-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 4px;
+    background-color: #535353;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.progress {
+    width: 0%;
+    height: 100%;
+    background-color: #1bd760;
+    border-radius: 2px;
+}
+
+.time-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.time {
+    font-size: 0.7rem;
+    color: #b3b3b3;
+}
+
+.control-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+}
+
+.control-container i {
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #b3b3b3;
+}
+
+.control-container i:hover {
+    color: #fff;
+}
+
+#play {
+    font-size: 2.2rem;
+    color: #fff;
+}
+
+#play:hover {
+    transform: scale(1.1);
+}
+.volume-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.volume-bar {
+    width: 100px;
+    appearance: none;
+    background-color: #535353;
+    height: 4px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.volume-bar::-webkit-slider-thumb {
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    background-color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.active {
+    color: #1bd760;
+}
+
+.card:hover {
+    background-color: #282828;
+    transition: background-color 0.3s ease;
+}
