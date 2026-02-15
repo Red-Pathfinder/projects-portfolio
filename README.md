@@ -1,20 +1,21 @@
 # ML & AI Projects Portfolio – Pragyan Prayas Jena
 
-This repository contains my end-to-end Machine Learning, Deep Learning, NLP, and Full-Stack projects built using Python, Flask, and modern AI tools.
+This repository showcases my end-to-end projects in Machine Learning, Deep Learning, NLP, and full-stack AI development. Each project covers the complete pipeline — from data preprocessing and model training to deployment using Flask and web interfaces.
 
 ## Projects
 
-### 1. Pneumonia Detection using CNN
-Deep learning model to detect pneumonia from chest X-ray images with Flask deployment.
+### Breast Cancer Detection
+Supervised machine learning model for early breast cancer classification. Includes data cleaning, feature engineering, model training, and performance evaluation.
 
-### 2. Breast Cancer Detection
-Machine learning classification model with preprocessing and evaluation.
+### LLM Document Chatbot
+Conversational application that answers queries from uploaded PDF, Word, and Excel files. Built using open-source LLMs with Ollama, LangChain, and LlamaIndex, integrated into a full-stack Flask interface.
 
-### 3. LLM Document Chatbot
-Conversational system using open-source LLMs (Ollama, LangChain, LlamaIndex) to answer queries from uploaded documents.
-
-### 4. Cat vs Dog Classifier
-Image classification using multiple ML models with web interface.
+### Cat vs Dog Classifier
+Image classification web application using multiple machine learning models (SVM, Random Forest, Logistic Regression) with a user-friendly Flask interface.
 
 ## Tech Stack
-Python | TensorFlow | Scikit-learn | Flask | LangChain | HTML | CSS | JavaScript
+Python • TensorFlow • Scikit-learn • Flask • LangChain • LlamaIndex • Ollama  
+NumPy • Pandas • Matplotlib • HTML • CSS • JavaScript
+
+## Focus Areas
+End-to-End AI Development • Model Deployment • NLP & LLM Applications • Computer Vision • Practical Problem Solving
