@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pneumonia Detection</title>
+    <style>
+        .container {
+            display: flex;
+            gap: 20px;
+        }
+        .image-container {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pneumonia Detection using CNN</h1>
+
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" required>
+        <br><br>
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if result %}
+        <h2>Result: {{ result }}</h2>
+        <div class="container">
+            <div class="image-container">
+                <h3>Original Image</h3>
+                <img src="{{ img_path }}" width="300">
+            </div>
+            {% if heatmap_path %}
+            <div class="image-container">
+                <h3>Grad-CAM Heatmap</h3>
+                <img src="{{ heatmap_path }}" width="300">
+            </div>
+            {% endif %}
+        </div>
+    {% endif %}
+</body>
+</html>
