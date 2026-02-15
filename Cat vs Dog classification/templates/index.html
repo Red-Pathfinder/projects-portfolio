@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Cat vs Dog Classifier</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>🐱 Cat vs Dog Classification 🐶</h1>
+
+      <form method="post" enctype="multipart/form-data">
+        <label class="file-upload" id="uploadLabel">
+          <input type="file" name="image" id="imageInput" required />
+          <span id="uploadText">Choose Image</span>
+        </label>
+
+        <div id="fileStatus" class="file-status"></div>
+
+        <select name="model">
+          <option value="svm">SVM</option>
+          <option value="rf">Random Forest</option>
+          <option value="lr">Logistic Regression</option>
+          <option value="knn">K-Nearest Neighbors (KNN)</option>
+        </select>
+
+        <button type="submit">Predict</button>
+      </form>
+
+      {% if result %}
+      <div class="result">Result: <span>{{ result }}</span></div>
+      {% endif %}
+    </div>
+
+    <script>
+      const input = document.getElementById("imageInput");
+      const label = document.getElementById("uploadLabel");
+      const text = document.getElementById("uploadText");
+      const status = document.getElementById("fileStatus");
+
+      input.addEventListener("change", function () {
+        if (input.files.length > 0) {
+          text.textContent = input.files[0].name;
+          label.classList.add("uploaded");
+          status.textContent = "✓ Image selected successfully";
+        }
+      });
+    </script>
+  </body>
+</html>
