@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stock Predictor</title>
+    <style>
+        body { font-family: sans-serif; background: #121212; color: white; text-align: center; }
+        .card { background: #1e1e1e; padding: 20px; margin: 20px auto; width: 300px; border-radius: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Stock Prediction</h1>
+    <input type="text" id="ticker" value="AAPL">
+    <button onclick="getPrediction()">Predict</button>
+
+    <div class="card">
+        <p>Actual (Last): <span id="actual">-</span></p>
+        <p>Linear Reg: <span id="lr">-</span></p>
+        <p>LSTM: <span id="lstm">-</span></p>
+    </div>
+
+    <script>
+        async function getPrediction() {
+            const ticker = document.getElementById('ticker').value;
+            const res = await fetch(`http://localhost:5000/predict/${ticker}`);
+            const data = await res.json();
+            document.getElementById('actual').innerText = data.actual_last.toFixed(2);
+            document.getElementById('lr').innerText = data.linear_regression.toFixed(2);
+            document.getElementById('lstm').innerText = data.lstm.toFixed(2);
+        }
+    </script>
+</body>
+</html>
